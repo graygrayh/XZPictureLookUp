@@ -179,16 +179,18 @@ class XZPictureLookUpView: UIView , UIScrollViewDelegate {
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        xzImageView.center = scrollView.center
+        
+        xzImageView.center.x = scrollView.contentSize.width > scrollView.frame.size.width ? scrollView.contentSize.width/2 : scrollView.center.x
+        
+        xzImageView.center.y = scrollView.contentSize.height > scrollView.frame.size.height ? scrollView.contentSize.height/2 :scrollView.center.y
     }
     
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
     }
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        scrollView.zoomScale = 1
+//        scrollView.zoomScale = 1
     }
-    
     
     
     /*
